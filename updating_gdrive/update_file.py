@@ -10,7 +10,7 @@ def auth_pydrive():
 
     gauth = GoogleAuth()
    
-    gauth.LoadCredentialsFile("mycreds.txt")
+    gauth.LoadCredentialsFile("client_secrets.json")
     if gauth.credentials is None:
         
         gauth.LocalWebserverAuth()
@@ -21,7 +21,7 @@ def auth_pydrive():
         
         gauth.Authorize()
     
-    gauth.SaveCredentialsFile("mycreds.txt")
+    gauth.SaveCredentialsFile("client_secrets.json")
 
     drive = GoogleDrive(gauth)
     return drive
